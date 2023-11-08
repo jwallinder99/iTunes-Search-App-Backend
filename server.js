@@ -11,7 +11,7 @@
     app.use(helmet())
 
     app.use(cors({
-        origin: ["http://localhost:3000", "https://itunes-search-app.onrender.com"]
+        origin: ["http://localhost:3000", "https://itunes-search-app-m9pi.onrender.com/"]
     }))
 
 
