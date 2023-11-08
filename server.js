@@ -4,23 +4,16 @@
     const helmet = require('helmet')
     //set a variable to hold the value of this instance of the server
     const app = express()
-
+    const cors = require("cors")
     const path = require('path')
 
     //use helmet 
     app.use(helmet())
 
+    app.use(cors({
+        origin: ["http://localhost:3000", "https://itunes-search-app.onrender.com"]
+    }))
 
-    // if (process.env.NODE_ENV === 'production') {
-
-    // }
-
-    //this is a base url for the api with a hardcoded search query that I used for testing the server
-    // app.get('/', async (req, res) => {
-    //     const response = await fetch('https://itunes.apple.com/search?term=jack+johnson&entity=musicVideo')
-    //     const data = await response.json()
-    //     res.send(data)
-    // })
 
     //get method for getting information from the api. Uses /search as the path parameter, and is an async function because it uses the fetch api
     app.get ('/search', async (req, res) => {
